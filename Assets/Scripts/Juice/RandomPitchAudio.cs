@@ -22,13 +22,14 @@ namespace Juice
 
         public void Play()
         {
-            // TODO [JUICE-3] 隨機挑一個音效、隨機音高，播出來。
-            // 提示：
-            // 1. 從 clips 隨機挑一個：Random.Range(0, clips.Length)（int 版本不含上限）
-            //    clips 是空的話，就用 source.clip
-            // 2. source.pitch = Random.Range(pitchRange.x, pitchRange.y);
-            // 3. 用 source.PlayOneShot(clip, volume) 播放。為什麼不用 source.Play()？
-            //    （想一想：連續被打兩下時，Play() 會怎樣？）
+            AudioClip clip = clips != null && clips.Length > 0
+                ? clips[Random.Range(0, clips.Length)]
+                : source.clip;
+            if (clip == null)
+                return;
+
+            source.pitch = Random.Range(pitchRange.x, pitchRange.y);
+            source.PlayOneShot(clip, volume);
         }
     }
 }

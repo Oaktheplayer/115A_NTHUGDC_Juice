@@ -20,8 +20,7 @@ namespace Juice
 
         public void Broadcast()
         {
-            // TODO [JUICE-5] 透過 GameEvents 廣播「有敵人死了」。
-            // 提示：GameEvents.RaiseEnemyKilled 需要兩個參數：位置（transform.position）和 enemy.Data。
+            GameEvents.RaiseEnemyKilled(transform.position, enemy.Data);
         }
     }
 }

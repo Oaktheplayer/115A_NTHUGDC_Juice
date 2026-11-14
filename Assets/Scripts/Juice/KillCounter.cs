@@ -30,8 +30,8 @@ namespace Juice
 
         private void HandleEnemyKilled(Vector3 position, EnemyData data)
         {
-            // TODO [JUICE-7]（選做）filter 有填的話，只算那一種敵人。
-            // 提示：data 就是死掉那隻敵人的 EnemyData，拿它跟 filter 比較；不一樣就 return。
+            if (filter != null && data != filter)
+                return;
 
             count++;
             Refresh();

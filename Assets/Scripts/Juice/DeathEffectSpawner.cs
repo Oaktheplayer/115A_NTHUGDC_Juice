@@ -13,14 +13,12 @@ namespace Juice
 
         private void OnEnable()
         {
-            // TODO [JUICE-6] 訂閱 GameEvents.EnemyKilled，有敵人死掉時呼叫 Spawn。
-            // 提示：跟上一堂 BgmPlayer 訂閱音量事件一樣，用 += 。
+            GameEvents.EnemyKilled += Spawn;
         }
 
         private void OnDisable()
         {
-            // TODO [JUICE-6] 取消訂閱（和 OnEnable 成對，用 -= ）。
-            // 想一想：GameEvents 是 static，場景重新載入後它還在。忘記取消訂閱會發生什麼事？
+            GameEvents.EnemyKilled -= Spawn;
         }
 
         private void Spawn(Vector3 position, EnemyData data)
