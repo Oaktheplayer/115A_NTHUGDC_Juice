@@ -26,6 +26,8 @@ namespace Juice
         public void Broadcast()
         {
             // TODO [JUICE-5] 透過事件頻道廣播「有敵人死了」。
+            // 準備：Project 視窗右鍵 → Create → Events → Enemy Killed Channel，建一份 asset，
+            //       拖進敵人 Prefab 的 EnemyDeathBroadcaster.channel（場景裡的 Spawner 也要拖「同一份」）。
             // 提示：channel.Raise 需要兩個參數：位置（transform.position）和 enemy.Data。
             //       channel 可能還沒拖（null），先檢查。
         }
