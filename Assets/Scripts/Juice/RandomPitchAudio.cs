@@ -11,7 +11,9 @@ namespace Juice
     {
         [SerializeField] private AudioClip[] clips;
         [SerializeField] private Vector2 pitchRange = new(0.9f, 1.1f);
+#pragma warning disable CS0414 // 做完 JUICE-3 之前 volume 還沒被用到，先關掉這個警告
         [SerializeField, Range(0f, 1f)] private float volume = 1f;
+#pragma warning restore CS0414
 
         private AudioSource source;
 
