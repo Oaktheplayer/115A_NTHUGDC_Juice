@@ -16,7 +16,7 @@ namespace Juice
         private void OnEnable()
         {
             // TODO [JUICE-6] 訂閱 channel.OnRaised，有敵人死掉時呼叫 Spawn。
-            // 提示：跟上一堂 BgmPlayer 訂閱 AudioSettingsData 一模一樣 —— 先檢查 null，再用 += 。
+            // 提示：投影片「C# 怎麼寫：event」那頁 —— 先檢查 channel 是不是 null，再用 += 。
         }
 
         private void OnDisable()
