@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Juice
 {
     /// <summary>
-    /// Event Bus（事件頻道），用 ScriptableObject 做。和上一堂的 AudioSettingsData 是同一個想法：
+    /// Event Bus（事件頻道），用 ScriptableObject 做。上一堂提到的 EventChannel 就是這個：
     /// 一份 asset 放在 Project 裡，大家都去拖「同一份」asset。
     /// - 發送端（敵人 Prefab 上的 EnemyDeathBroadcaster）呼叫 Raise
     /// - 接收端（場景裡的 DeathEffectSpawner）訂閱 OnRaised。之後要加計分、成就，只要再寫一個 listener 聽同一份 asset
