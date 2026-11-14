@@ -5,11 +5,12 @@ using UnityEngine;
 namespace Juice
 {
     /// <summary>
-    /// 得分 = 擊殺數。聽 GameEvents.EnemyKilled，每死一隻就 +1。
+    /// 得分 = 擊殺數。聽 EnemyKilledChannel，每死一隻就 +1。
     /// filter 有填的話，只算那一種敵人（例如「擊殺 Boss 數」）。
     /// </summary>
     public class KillCounter : MonoBehaviour
     {
+        [SerializeField] private EnemyKilledChannel channel;
         [SerializeField] private TMP_Text label;
         [SerializeField] private string prefix = "Kills: ";
         [Tooltip("留空 = 每種敵人都算；有填 = 只算這種敵人")]
@@ -19,13 +20,15 @@ namespace Juice
 
         private void OnEnable()
         {
-            GameEvents.EnemyKilled += HandleEnemyKilled;
+            if (channel != null)
+                channel.OnRaised += HandleEnemyKilled;
             Refresh();
         }
 
         private void OnDisable()
         {
-            GameEvents.EnemyKilled -= HandleEnemyKilled;
+            if (channel != null)
+                channel.OnRaised -= HandleEnemyKilled;
         }
 
         private void HandleEnemyKilled(Vector3 position, EnemyData data)
