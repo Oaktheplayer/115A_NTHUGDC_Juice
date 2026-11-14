@@ -18,6 +18,9 @@ namespace Enemy
         [SerializeField] private Weapon weapon;
         [SerializeField] private Health health;
 
+        /// <summary>這隻敵人的數值資料。也可以拿來分辨「是哪一種敵人」。</summary>
+        public EnemyData Data => data;
+
         private State state = State.Idle;
         private Transform player;
 

@@ -24,8 +24,9 @@ namespace Combat
         public State LifeState { get; private set; } = State.Alive;
         public bool IsAlive => LifeState == State.Alive;
 
-        public UnityEvent OnDamaged;
-        public UnityEvent OnKilled;
+        // TODO [JUICE-1] (1/3) 宣告兩個 UnityEvent：OnDamaged（受傷時）和 OnKilled（死亡時）。
+        // 提示：public UnityEvent 名字; —— 存檔回到 Unity，Inspector 會多出可以拖函式的欄位。
+
         public event Action OnKilledEvent;
         public event Action<int> OnDamageTaken;
         /// <summary>Fires whenever Value or MaxValue changes (damage, heal, apply max, death).</summary>
@@ -59,8 +60,13 @@ namespace Combat
             value = Mathf.Max(0, value - amount);
             int delta = prev - value;
 
+            // ❌ 壞例子：Health 自己去找 AudioSource 來播音效。
+            // 把下面這行的註解拿掉，Play 看看：被打會出聲音。
+            // 那如果還要粒子？鏡頭晃動？玩家和敵人要不同的聲音？—— 每加一種，就要回來改 Health。
+            // GetComponent<AudioSource>().Play();
+
             OnDamageTaken?.Invoke(delta);
-            OnDamaged?.Invoke();
+            // TODO [JUICE-1] (2/3) 受傷時呼叫 OnDamaged。（記得把上面的壞例子刪掉）
             NotifyChanged();
 
             if (value <= 0)
@@ -88,7 +94,8 @@ namespace Combat
 
             LifeState = State.Dead;
             value = 0;
-            OnKilled?.Invoke();
+            // TODO [JUICE-1] (3/3) 死亡時呼叫 OnKilled。
+            // 想一想：為什麼要在 Destroy(gameObject) 之前呼叫？
             OnKilledEvent?.Invoke();
             NotifyChanged();
 
