@@ -98,6 +98,8 @@ GameObject:
   - component: {fileID: 5656211563883675565}
   - component: {fileID: 2332949403968522046}
   - component: {fileID: -4436566997294527162}
+  - component: {fileID: -5303801000692761259}
+  - component: {fileID: 888416520877220038}
   m_Layer: 0
   m_Name: EnemyTemplate
   m_TagString: Enemy
@@ -119,6 +121,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2960749215169573522}
+  - {fileID: 6596404528281004811}
   - {fileID: 3702882916780134401}
   - {fileID: 2893678545281804168}
   - {fileID: 9123456789012345679}
@@ -202,6 +205,48 @@ MonoBehaviour:
   maxValue: 5
   destroyOnDeath: 1
   value: 0
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7819722748680715780}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 888416520877220038}
+        m_TargetAssemblyTypeName: Juice.RandomPitchAudio, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnKilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -5303801000692761259}
+        m_TargetAssemblyTypeName: Juice.EnemyDeathBroadcaster, Assembly-CSharp
+        m_MethodName: Broadcast
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5656211563883675565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +290,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -330,6 +375,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5303801000692761259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051059051473501460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e11cdf62f25c8f48b7c75f41aedd83c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Juice.EnemyDeathBroadcaster
+  channel: {fileID: 11400000, guid: b57cf5b7a586ba1499309e496e969778, type: 2}
+--- !u!114 &888416520877220038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051059051473501460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3444e8bed9c39428dc21e82b1a7f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Juice.RandomPitchAudio
+  clips:
+  - {fileID: 8300000, guid: dfb8504b61cb9b34f8006a4927541445, type: 3}
+  - {fileID: 8300000, guid: 00e8ff9f57b118c4cbf3fe4aed618258, type: 3}
+  - {fileID: 8300000, guid: 191fe6ef8c5f16e44854b7c1fda6614a, type: 3}
+  - {fileID: 8300000, guid: d8cedd3449bbdfe4e9c887ddd8d79c8c, type: 3}
+  - {fileID: 8300000, guid: 146492e07b26b5748b852744b79f338c, type: 3}
+  pitchRange: {x: 0.9, y: 1.1}
+  volume: 1
 --- !u!1 &8067353085875972071
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,4 +744,71 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5919274172895691178, guid: 8cbf200a25b16c74a9ca33006ef88083, type: 3}
   m_PrefabInstance: {fileID: 8877665544332211000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9163282244423549540
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 895463846829472650}
+    m_Modifications:
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207385423856019938, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+      propertyPath: m_Name
+      value: HitSpark
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+--- !u!4 &6596404528281004811 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2639573783256836463, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+  m_PrefabInstance: {fileID: 9163282244423549540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7819722748680715780 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1418555603464567904, guid: bedbb76ab8e8f3c41850af40c065ad33, type: 3}
+  m_PrefabInstance: {fileID: 9163282244423549540}
   m_PrefabAsset: {fileID: 0}

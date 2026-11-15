@@ -234,6 +234,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2281775024549246049, guid: 454e01d781dcef14da5fbcdb002190ac, type: 3}
   m_PrefabInstance: {fileID: 583075468}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &427241592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427241594}
+  - component: {fileID: 427241593}
+  m_Layer: 0
+  m_Name: ParticleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &427241593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427241592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc53e2bb6fedcc41b0480d5be5c7ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Juice.DeathEffectSpawner
+  channel: {fileID: 11400000, guid: b57cf5b7a586ba1499309e496e969778, type: 2}
+  deathPrefab: {fileID: 1854953006330185663, guid: 7817f3751afc0bc48b6e390582fb80fd, type: 3}
+--- !u!4 &427241594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427241592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -33400,22 +33446,17 @@ Tilemap:
       m_AllTileFlags: 1073741826
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - serializedVersion: 2
-    m_RefCount: 3195
+  - m_RefCount: 3195
     m_Data: {fileID: 11400000, guid: b2f9990e5bb353945b781a5e03e27a9d, type: 2}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 79065a188fb3fba4682c138f43fe1395, type: 2}
   m_TileSpriteArray:
-  - serializedVersion: 2
-    m_RefCount: 100
+  - m_RefCount: 100
     m_Data: {fileID: 679002822, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 22
+  - m_RefCount: 22
     m_Data: {fileID: 740028030, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
   m_TileMatrixArray:
-  - serializedVersion: 2
-    m_RefCount: 3195
+  - m_RefCount: 3195
     m_Data:
       e00: 1
       e01: 0
@@ -33434,8 +33475,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - serializedVersion: 2
-    m_RefCount: 3195
+  - m_RefCount: 3195
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -69041,52 +69081,37 @@ Tilemap:
       m_AllTileFlags: 1073741826
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 088f1132b51cce54d8ab942098f6cb10, type: 2}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 11400000, guid: 3d196004fbe92204a84e953a62131eb6, type: 2}
-  - serializedVersion: 2
-    m_RefCount: 3525
+  - m_RefCount: 3525
     m_Data: {fileID: 11400000, guid: 79065a188fb3fba4682c138f43fe1395, type: 2}
   m_TileSpriteArray:
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 4755373664117421245, guid: 9bd1a6cdaface8c4aa721eb3fe4c8f96, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 1189101684, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 8266258911003420344, guid: 9bd1a6cdaface8c4aa721eb3fe4c8f96, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 4035501790466999928, guid: 9bd1a6cdaface8c4aa721eb3fe4c8f96, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 1016655081, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: -1453350334737186109, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 4544353558242898176, guid: 9bd1a6cdaface8c4aa721eb3fe4c8f96, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 4152910327465251759, guid: 9bd1a6cdaface8c4aa721eb3fe4c8f96, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {fileID: 731570023}
-  - serializedVersion: 2
-    m_RefCount: 852
+  - m_RefCount: 852
     m_Data: {fileID: 294070525, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
-  - serializedVersion: 2
-    m_RefCount: 2673
+  - m_RefCount: 2673
     m_Data: {fileID: 1419530802, guid: b64a39bb4006f8a459063f400c13a86d, type: 3}
   m_TileMatrixArray:
-  - serializedVersion: 2
-    m_RefCount: 3525
+  - m_RefCount: 3525
     m_Data:
       e00: 1
       e01: 0
@@ -69104,8 +69129,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data:
       e00: -1
       e01: -0.00000008742278
@@ -69123,8 +69147,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data:
       e00: 0.000000059604645
       e01: 0.99999994
@@ -69142,8 +69165,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data:
       e00: 0.000000059604645
       e01: -0.99999994
@@ -69162,11 +69184,9 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - serializedVersion: 2
-    m_RefCount: 0
+  - m_RefCount: 0
     m_Data: {r: 0.97377336, g: 0.5522636, b: 0.6070551, a: 1}
-  - serializedVersion: 2
-    m_RefCount: 3525
+  - m_RefCount: 3525
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -69244,3 +69264,4 @@ SceneRoots:
   - {fileID: 181828190}
   - {fileID: 765695301}
   - {fileID: 1442567885}
+  - {fileID: 427241594}
